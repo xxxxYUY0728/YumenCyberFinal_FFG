@@ -150,7 +150,7 @@ Macro.add('clock1', {
     handler() {
         const $out = $(this.output);
         
-        // 只执行一次：获取当前时间并格式化
+        // 执行一次
         function getStaticTime() {
             const d = new Date();
             const day = String(d.getDate()).padStart(2,'0');
@@ -163,11 +163,11 @@ Macro.add('clock1', {
             return `${h}:${m}:${s}`;
         }
 
-        // 只设置一次文本，不刷新、不跳动
+        // 只设置一次文本
         $out.text(getStaticTime());
     }
 });
-    // 排队版 type：支持换行<br>、分段、空格、HTML
+    // 排队 type
     Macro.add('type1', {
         tags: null,
         handler() {
@@ -175,7 +175,7 @@ Macro.add('clock1', {
             let html = this.payload[0].contents;
             const $out = $(this.output);
 
-            // 把 Twine 换行自动转成 <br>
+            // 换行自动转成 <br>
             html = html.replace(/\n/g, "<br>");
             let pos = 0;
 
@@ -870,7 +870,7 @@ Prosthetic Compone▼nt Co▼ol▼ing.exe Failed
 一阵诡异的电流攒动全身。
 &lt;&lt;linkreplace&quot;►......&quot;&gt;&gt;
 &lt;span style=&quot;color: #22D398; text-shadow: 0 0 6px #22D398, 0 0 10px #22D398;&quot;&gt;
-&lt;&lt;nobr&gt;&gt; &lt;连接中断&gt;&lt;&lt;/nobr&gt;&gt;/span&gt;
+&lt;&lt;nobr&gt;&gt; &lt;连接中断&gt;&lt;&lt;/nobr&gt;&gt;&lt;/span&gt;
 [[►...什么？|室外-系统故障00]]
 &lt;&lt;/linkreplace&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="街巷冲突-义体端" tags="" position="1400,800" size="100,100">&lt;&lt;set $targetData = $norNameList.find(t =&gt; t.name == $userName)&gt;&gt;
